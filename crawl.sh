@@ -109,7 +109,7 @@ mkdir bin-release; cd bin-release
             wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Music/main01.mp3"
             wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Music/main02.mp3"
         
-        cd .. # bin-release/Music
+        cd .. # bin-release/Data/Music
         
     cd .. # bin-release/Data
 
