@@ -28,49 +28,41 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                 wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/petstatusdesc2.xml"
                 wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/PetTitleCfg_1807041035.xml"
                 wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/SceneVersionConfig_1808201648.xml"
-
+                
+                mkdir face; cd face
+                
+                    for i in `seq 1 25`
+                    do
+                        wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/face/"$i".png"
+                    done
+                
+                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/face/
+                
+                mkdir Music; cd Music
+                
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Music/main01.mp3"
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Music/main02.mp3"
+                
+                cd .. 
+                
+                mkdir pet; cd pet
+                
+                    for i in `seq 0 2`
+                    do
+                        for j in `seq 2 3`
+                        do
+                            wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/pet/1"$i$j".png"
+                        done
+                    done
+                    
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/pet/upgrade.png"
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/pet/uplevel.png"
+                
+                
+                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/pet/
+                
                 mkdir res; cd res
 
-                    mkdir scene; cd scene
-
-                        for map in 22 6 28 24 25 21
-                        do
-                            mkdir $map; cd $map
-
-                                for i in `seq 0 221`
-                                do
-                                    if [[ $(wget -O /dev/null "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/bg_V"$i"/0_0.jpg"; echo $?) -eq 0 ]]
-                                    then
-                                        mkdir "bg_V"$i; cd "bg_V"$i
-                                        for x in `seq 0 11`; do for y in `seq 0 12`; do echo $x"_"$y".jpg"; done; done > mapbase.txt
-                                        wget -B "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/bg_V"$i"/" -i mapbase.txt
-                                        wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/minimap_V"$i".png"
-                                        wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/largemp_V"$i".png"
-                                        rm mapbase.txt
-                                        cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/$map/bg_V$i/
-                                    fi
-                                done
-
-                            cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/$map/
-                         done
-                         
-                    cd 22
-                        
-                        wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/22/20091028183349_V2.png"
-                        
-                    cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/22
-
-                    cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/
-                    
-                    mkdir topicon; cd topicon
-                    
-                        for i in `seq 1 12`
-                        do
-                            wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/topicon/tongyong"$i".png"
-                        done
-                    
-                    cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/topicon/
-                    
                     mkdir Avatar; cd Avatar
                     
                         for i in `seq 1 9`
@@ -96,6 +88,52 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                     
                     cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/Avatar/
 
+                    mkdir quiz; cd quiz
+                    
+                       wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/quiz/giftconf.xml"
+                       
+                    cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/quiz/
+                    
+                    mkdir scene; cd scene
+
+                        for map in 22 6 28 24 25 21
+                        do
+                            mkdir $map; cd $map
+
+                                for i in `seq 0 221`
+                                do
+                                    if [[ $(wget -O /dev/null "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/bg_V"$i"/0_0.jpg"; echo $?) -eq 0 ]]
+                                    then
+                                        mkdir "bg_V"$i; cd "bg_V"$i
+                                        for x in `seq 0 11`; do for y in `seq 0 12`; do echo $x"_"$y".jpg"; done; done > mapbase.txt
+                                        wget -B "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/bg_V"$i"/" -i mapbase.txt
+                                        wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/minimap_V"$i".png"
+                                        wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/largemp_V"$i".png"
+                                        rm mapbase.txt
+                                        cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/$map/bg_V$i/
+                                    fi
+                                done
+
+                            cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/$map/
+                         done
+                         
+                        cd 22
+                            
+                            wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/22/20091028183349_V2.png"
+                            
+                        cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/22
+
+                    cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/
+                    
+                    mkdir topicon; cd topicon
+                    
+                        for i in `seq 1 12`
+                        do
+                            wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/topicon/tongyong"$i".png"
+                        done
+                    
+                    cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/topicon/
+                    
                 cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/
                 
                 mkdir title; cd title
@@ -106,39 +144,6 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                     done
 
                 cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/title/
-                
-                mkdir face; cd face
-                
-                    for i in `seq 1 25`
-                    do
-                        wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/face/"$i".png"
-                    done
-                
-                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/face/
-                
-                mkdir pet; cd pet
-                
-                    for i in `seq 0 2`
-                    do
-                        for j in `seq 2 3`
-                        do
-                            wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/pet/1"$i$j".png"
-                        done
-                    done
-                
-                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/pet/
-                
-                mkdir zonelist; cd zonelist
-                        
-                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/zonelist/ServerInfo1801031117.xml"
-                    
-                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/zonelist/
-                
-                mkdir WorldMap; cd WorldMap
-                        
-                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/WorldMap/WorldMap20130529.swf"
-                    
-                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/zonelist/
                 
                 mkdir ui; cd ui
                 
@@ -177,12 +182,17 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                     
                 cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/ui/
                 
-                mkdir Music; cd Music
+                mkdir WorldMap; cd WorldMap
+                        
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/WorldMap/WorldMap20130529.swf"
+                    
+                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/WorldMap/
                 
-                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Music/main01.mp3"
-                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Music/main02.mp3"
-                
-                cd .. 
+                mkdir zonelist; cd zonelist
+                        
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/zonelist/ServerInfo1801031117.xml"
+                    
+                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/zonelist/
                 
             cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/
 
@@ -194,14 +204,6 @@ cd .. # resource.pet.qq.com/
 
 mkdir pet.qq.com; cd pet.qq.com
 
-    mkdir static; cd static
-
-        wget "http://pet.qq.com/static/mapnew_conf.json"
-        wget "http://pet.qq.com/static/pet_act_conf.json"
-        wget "http://pet.qq.com/static/pet_task_conf.json"
-    
-    cd .. # pet.qq.com/static/
-    
     mkdir resource; cd resource
     
         mkdir js; cd js
@@ -214,6 +216,14 @@ mkdir pet.qq.com; cd pet.qq.com
         
     cd .. # pet.qq.com/resource/
 
+    mkdir static; cd static
+
+        wget "http://pet.qq.com/static/mapnew_conf.json"
+        wget "http://pet.qq.com/static/pet_act_conf.json"
+        wget "http://pet.qq.com/static/pet_task_conf.json"
+    
+    cd .. # pet.qq.com/static/
+    
 cd .. # pet.qq.com/
 
 mkdir img.pet.qq.com; cd img.pet.qq.com
