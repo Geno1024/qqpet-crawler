@@ -125,7 +125,7 @@ cd .. # resource.pet.qq.com/
 
 mkdir pet.qq.com; cd pet.qq.com
 
-    mkdir static
+    mkdir static; cd static
 
         wget "http://pet.qq.com/static/mapnew_conf.json"    
     
