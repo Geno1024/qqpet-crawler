@@ -27,11 +27,12 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                                         wget -B "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/bg_V"$i"/" -i mapbase.txt
                                         wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/minimap_V"$i".png"
                                         wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/largemp_V"$i".png"
+                                        rm mapbase.txt
                                         cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/$map/bg_V$i/
                                     fi
                                 done
 
-                            cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/22/
+                            cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/$map/
                          done
 
                     cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/
@@ -52,8 +53,8 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                             mkdir "00"$i; cd "00"$i
             
                             for j in `seq -w 1 1000`; do echo "00"$i"0"$j".png"; done > list.txt
-                            
                             wget -B "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/Avatar/00"$i"/" -i list.txt
+                            rm list.txt
                             
             #                    for j in `seq -w 1 1000`
              #                   do
