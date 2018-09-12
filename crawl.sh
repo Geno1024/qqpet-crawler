@@ -16,6 +16,12 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
             wget "http://resource.pet.qq.com/WebSoc/bin-release/plugin_ui_1706281608.swf"
             wget "http://resource.pet.qq.com/WebSoc/bin-release/plugin_zone_20130121_170000.swf"
             
+            mkdir assets; cd assets
+            
+                wget "http://resource.pet.qq.com/WebSoc/bin-release/assets/pet/pet_20120301.swf"
+                
+            cd .. # resource.pet.qq.com/WebSoc/bin-release/assets/
+            
             mkdir Data; cd Data
                 
                 wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/FaceViewInfo.xml"
@@ -176,7 +182,7 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                     wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Music/main01.mp3"
                     wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Music/main02.mp3"
                 
-                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/Music/
+                cd .. 
                 
             cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/
 
