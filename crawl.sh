@@ -1,7 +1,10 @@
+. cookie.sh
+
 wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts act.pet.qq.com/20120322task/index.html
 wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts act.pet.qq.com/newsub/babyinfo.html
 wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts web.pet.qq.com/web/market/frame.htm
 wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts http://web.pet.qq.com/petquan/index.html
+for i in yb qd qb qb_2 qd_2; do wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts --exclude-domains=pay.qq.com http://act.pet.qq.com/web/market/fail_$i.htm; done
 
 mkdir pet.qq.com; cd pet.qq.com
 
@@ -36,6 +39,20 @@ cd .. # pet.qq.com/
 
 mkdir img.pet.qq.com; cd img.pet.qq.com
 
+    mkdir 2009; cd 2009
+    
+        mkdir 2011; cd 2011
+        
+            mkdir other; cd other
+            
+                wget "http://img.pet.qq.com/2009/2011/other/pink_diamond.gif"
+            
+            cd .. # img.pet.qq.com/2009/2011/other/
+        
+        cd .. # img.pet.qq.com/2009/2011/
+    
+    cd .. # img.pet.qq.com/2009/
+
     mkdir 2012; cd 2012
     
         mkdir 960; cd 960
@@ -47,6 +64,12 @@ mkdir img.pet.qq.com; cd img.pet.qq.com
             cd .. # img.pet.qq.com/2012/960/images/
         
         cd .. # img.pet.qq.com/2012/960/
+        
+        mkdir market; cd market
+        
+            wget "http://img.pet.qq.com/2012/market/avatarpreview_20120229.swf"
+            
+        cd .. # http://img.pet.qq.com/2012/market/
     
     cd .. # img.pet.qq.com/2012/
 
@@ -65,7 +88,18 @@ mkdir img.pet.qq.com; cd img.pet.qq.com
         wget "http://img.pet.qq.com/avatar/CPetSprite.swf"
         wget "http://img.pet.qq.com/avatar/10-GG.png"
         wget "http://img.pet.qq.com/avatar/10-MM.png"
-        wget "http://img.pet.qq.com/avatar/3/5_show.png"
+        
+        for major in `seq 1 9`
+        do
+            mkdir $major; cd $major
+            
+                for minor in `seq 1 1000`; do echo $minor".png"; echo $minor"_show.png"; done > minor.txt
+                
+                wget -B "http://img.pet.qq.com/avatar/"$major"/" -i minor.txt
+                rm minor.txt
+                
+            cd .. # img.pet.qq.com/avatar/$major
+        done
     
     cd .. # img.pet.qq.com/avatar/
     
@@ -74,6 +108,12 @@ mkdir img.pet.qq.com; cd img.pet.qq.com
         wget "http://img.pet.qq.com/dj/10001016.png"
     
     cd .. # img.pet.qq.com/dj/
+    
+    mkdir images; cd images
+    
+        wget "http://img.pet.qq.com/images/default.gif"
+    
+    cd .. # img.pet.qq.com/images/
     
     mkdir vip; cd vip
     
@@ -383,11 +423,51 @@ cd .. # resource.pet.qq.com/
 
 mkdir web.pet.qq.com; cd web.pet.qq.com
 
+    mkdir fcgi-bin; cd fcgi-bin
+    
+        for i in `seq 0 4`
+        do
+            wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" "http://web.pet.qq.com/fcgi-bin/market?cmd=shop&ajax=1&kind=0&subkind=$i&spec=102"
+            wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" "http://web.pet.qq.com/fcgi-bin/market?cmd=shop&ajax=1&kind=0&subkind=$i&spec=103"
+        done
+        
+        for i in `seq 0 2`
+        do
+            wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" "http://web.pet.qq.com/fcgi-bin/market?cmd=shop&ajax=1&kind=1&subkind=$i&spec=102"
+            wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" "http://web.pet.qq.com/fcgi-bin/market?cmd=shop&ajax=1&kind=1&subkind=$i&spec=103"
+        done
+    
+        for i in `seq 0 8`
+        do
+            wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" "http://web.pet.qq.com/fcgi-bin/market?cmd=shop&ajax=1&kind=2&subkind=$i&spec=102"
+            wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" "http://web.pet.qq.com/fcgi-bin/market?cmd=shop&ajax=1&kind=2&subkind=$i&spec=103"
+        done
+        
+        wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" "http://web.pet.qq.com/fcgi-bin/market?cmd=shop&ajax=1&kind=3&spec=102"
+        wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" "http://web.pet.qq.com/fcgi-bin/market?cmd=shop&ajax=1&kind=3&spec=103"
+        
+        wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" "http://web.pet.qq.com/fcgi-bin/market?cmd=shop&ajax=1&kind=4&spec=102"
+        wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" "http://web.pet.qq.com/fcgi-bin/market?cmd=shop&ajax=1&kind=4&spec=103"
+                
+    cd .. # web.pet.qq.com/fcgi-bin/
+
     mkdir petquan; cd petquan
     
         wget "http://web.pet.qq.com/petquan/index.html"
     
-    cd .. # web.pet.qq.com/petquan
+    cd .. # web.pet.qq.com/petquan/
 
 cd .. # web.pet.qq.com/
+
+# for line in `grep -hPo "(?<=pic:\')\d+(?=\')" web.pet.qq.com/fcgi-bin/* | sort | uniq`; do echo $line".gif"; done > market.txt
+# mkdir img2.pet.qq.com; cd img2.pet.qq.com
+
+  #  mkdir wp; cd wp
+    
+   #     wget -B "http://img.pet.qq.com/wp/" -i ../../market.txt
+    
+    #cd .. # img.pet.qq.com/dj/
+    
+#cd .. # img.pet.qq.com/
+
 
