@@ -131,7 +131,7 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                     
                     mkdir scene; cd scene
 
-                        for map in `seq 7 20`
+                        for map in `seq 6 34`
                         do
                         
                             if [[ $(wget -O /dev/null "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/" 2>&1 | grep 403 > /dev/null; echo $?) -eq 0 ]]
@@ -186,13 +186,16 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                 
                 mkdir SceneConfig; cd SceneConfig
                 
-                    mkdir 22_1808201648; cd 22_1808201648
-    
-                        wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/SceneConfig/22_1808201648/navi.xml"
-                        wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/SceneConfig/22_1808201648/NpcList.xml"
-                                                
-                    cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/SceneConfig/22_1808201648/
-                
+                    for scene in 6_1709071123 7_1611231532 13_1611231532 15_1305071600 16_1401151103 18_1305071600 20_1305071600 21_1611231532 22_1808201648 23_120307 24_1611231532 25_1611231532 26_1401151103 28_1611231532 30_1611231532 31_11.12.31 32_11.12.31 33_120808 34_130925
+                    do
+                        mkdir $scene; cd $scene
+        
+                            wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/SceneConfig/"$scene"/navi.xml"
+                            wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/SceneConfig/"$scene"/NpcList.xml"
+                                                    
+                        cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/SceneConfig/22_1808201648/
+                    done
+                    
                 cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/SceneConfig/
                 
                 mkdir task; cd task
