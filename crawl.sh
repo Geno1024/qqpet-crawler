@@ -1,4 +1,5 @@
 wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts act.pet.qq.com/20120322task/index.html
+wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts act.pet.qq.com/newsub/babyinfo.html
 
 mkdir pet.qq.com; cd pet.qq.com
 
@@ -31,12 +32,33 @@ mkdir pet.qq.com; cd pet.qq.com
     
 cd .. # pet.qq.com/
 
+mkdir img.pet.qq.com; cd img.pet.qq.com
+
+    mkdir 2013; cd 2013
+    
+        mkdir babyinfo; cd babyinfo
+        
+            wget "http://img.pet.qq.com/2013/babyinfo/baby_box2.gif"
+        
+        cd .. # img.pet.qq.com/2013/babyinfo
+    
+    cd .. # img.pet.qq.com/2013/
+    
+    mkdir vip; cd vip
+    
+        wget "http://img.pet.qq.com/vip/vip0.png"
+        wget "http://img.pet.qq.com/vip/vip_nn.png"
+    
+    cd .. # img.pet.qq.com/vip/
+
+cd .. # img.pet.qq.com/
+
 mkdir resource.pet.qq.com; cd resource.pet.qq.com
 
     mkdir WebSoc; cd WebSoc;
 
         mkdir bin-release; cd bin-release
-
+        
             wget "http://resource.pet.qq.com/WebSoc/bin-release/lib_fge_all_1210301615.lib"
             wget "http://resource.pet.qq.com/WebSoc/bin-release/lib_include_1706281608.lib"
             wget "http://resource.pet.qq.com/WebSoc/bin-release/main.swf"
@@ -54,7 +76,11 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
             
             mkdir assets; cd assets
             
-                wget "http://resource.pet.qq.com/WebSoc/bin-release/assets/pet/pet_20120301.swf"
+                mkdir pet; cd pet
+            
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/assets/pet/pet_20120301.swf"
+                    
+                cd .. # resource.pet.qq.com/WebSoc/bin-release/assets/pet/
                 
             cd .. # resource.pet.qq.com/WebSoc/bin-release/assets/
             
