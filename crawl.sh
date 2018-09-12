@@ -16,21 +16,24 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                     
                         for i in `seq 0 11`; do for j in `seq 0 12`; do echo $i"_"$j".jpg"; done; done > mapbase.txt
 
-                        mkdir 22; cd 22
+                        for map in 22 6 28 24 25 21
+                        do
+                            mkdir $map; cd $map
 
-                            for i in `seq 110 221`
-                            do
-                                if [[ $(wget -O /dev/null "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/22/bg_V"$i"/0_0.jpg"; echo $?) -eq 0 ]]
-                                then
-                                    mkdir "bg_V"$i; cd "bg_V"$i
-                                    wget -B "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/22/bg_V"$i"/" -i ../../mapbase.txt
-                                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/22/minimap_V"$i".png"
-                                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/22/largemp_V"$i".png"
-                                    cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/22/bg_V$i/
-                                fi
-                            done
+                                for i in `seq 0 221`
+                                do
+                                    if [[ $(wget -O /dev/null "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/bg_V"$i"/0_0.jpg"; echo $?) -eq 0 ]]
+                                    then
+                                        mkdir "bg_V"$i; cd "bg_V"$i
+                                        wget -B "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/bg_V"$i"/" -i ../../mapbase.txt
+                                        wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/minimap_V"$i".png"
+                                        wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/largemp_V"$i".png"
+                                        cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/$map/bg_V$i/
+                                    fi
+                                done
 
-                        cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/22/
+                            cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/22/
+                         done
 
                     cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/
                     
