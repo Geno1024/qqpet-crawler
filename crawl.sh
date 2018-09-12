@@ -44,6 +44,21 @@ mkdir img.pet.qq.com; cd img.pet.qq.com
     
     cd .. # img.pet.qq.com/2013/
     
+    mkdir avatar; cd avatar
+    
+        wget "http://img.pet.qq.com/avatar/CPetSprite.swf"
+        wget "http://img.pet.qq.com/avatar/10-GG.png"
+        wget "http://img.pet.qq.com/avatar/10-MM.png"
+        wget "http://img.pet.qq.com/avatar/3/5_show.png"
+    
+    cd .. # img.pet.qq.com/avatar/
+    
+    mkdir dj; cd dj
+    
+        wget "http://img.pet.qq.com/dj/10001016.png"
+    
+    cd .. # img.pet.qq.com/dj/
+    
     mkdir vip; cd vip
     
         wget "http://img.pet.qq.com/vip/vip0.png"
@@ -73,9 +88,28 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
             wget "http://resource.pet.qq.com/WebSoc/bin-release/plugin_ui_1706281608.swf"
             wget "http://resource.pet.qq.com/WebSoc/bin-release/plugin_websoc_20130527_173111.swf"
             wget "http://resource.pet.qq.com/WebSoc/bin-release/plugin_zone_20130121_170000.swf"
+            wget "http://resource.pet.qq.com/WebSoc/bin-release/ScreenShower_20121022_121907.swf"
             
             mkdir assets; cd assets
             
+                mkdir image; cd image
+                
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/assets/image/loading.jpg"
+                    
+                cd .. # resource.pet.qq.com/WebSoc/bin-release/assets/image/
+                
+                mkdir loader; cd loader
+                
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/assets/loader/loading_icon.swf"
+                    
+                cd .. # resource.pet.qq.com/WebSoc/bin-release/assets/loader/
+                
+                mkdir logo; cd logo
+                
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/assets/logo/logo.png"
+                    
+                cd .. # resource.pet.qq.com/WebSoc/bin-release/assets/logo/
+                
                 mkdir pet; cd pet
             
                     wget "http://resource.pet.qq.com/WebSoc/bin-release/assets/pet/pet_20120301.swf"
@@ -100,12 +134,46 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                 
                 cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/face/
                 
+                mkdir LoadPanel; cd LoadPanel
+                
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/LoadPanel/loading_1702221520.jpg"
+                
+                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/LoadPanel/
+                
                 mkdir Music; cd Music
                 
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Music/effect.mp3"
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Music/live01.mp3"
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Music/live02.mp3"
                     wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Music/main01.mp3"
                     wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Music/main02.mp3"
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Music/sea01.mp3"
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Music/sea02.mp3"
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Music/sound3.mp3"
                 
-                cd .. 
+                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/Music/
+                
+                mkdir MusicConfig_3; cd MusicConfig_3
+                
+                    for scene in 6 7 13 15 16 18 20 21 22 23 24 25 26 28 30 31 32 33 34
+                    do
+                        mkdir $scene; cd $scene
+                            wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/MusicConfig_3/"$scene"/MusicConfigV2.xml"
+                        cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/MusicConfig_3/$scene
+                    done
+                    
+                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/MusicConfig_3/
+                
+                mkdir MusicConfig_4; cd MusicConfig_4
+                
+                    for scene in 6 7 13 15 16 18 20 21 22 23 24 25 26 28 30 31 32 33 34
+                    do
+                        mkdir $scene; cd $scene
+                            wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/MusicConfig_4/"$scene"/MusicConfigV2.xml"
+                        cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/MusicConfig_4/$scene
+                    done
+                    
+                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/MusicConfig_4/
                 
                 mkdir pet; cd pet
                 
