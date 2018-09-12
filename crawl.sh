@@ -1,5 +1,7 @@
 wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts act.pet.qq.com/20120322task/index.html
 wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts act.pet.qq.com/newsub/babyinfo.html
+wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts web.pet.qq.com/web/market/frame.htm
+wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts http://web.pet.qq.com/petquan/index.html
 
 mkdir pet.qq.com; cd pet.qq.com
 
@@ -34,13 +36,27 @@ cd .. # pet.qq.com/
 
 mkdir img.pet.qq.com; cd img.pet.qq.com
 
+    mkdir 2012; cd 2012
+    
+        mkdir 960; cd 960
+            
+            mkdir images; cd images
+                
+                wget "http://img.pet.qq.com/2012/960/images/main.jpg"
+            
+            cd .. # img.pet.qq.com/2012/960/images/
+        
+        cd .. # img.pet.qq.com/2012/960/
+    
+    cd .. # img.pet.qq.com/2012/
+
     mkdir 2013; cd 2013
     
         mkdir babyinfo; cd babyinfo
         
             wget "http://img.pet.qq.com/2013/babyinfo/baby_box2.gif"
         
-        cd .. # img.pet.qq.com/2013/babyinfo
+        cd .. # img.pet.qq.com/2013/babyinfo/
     
     cd .. # img.pet.qq.com/2013/
     
