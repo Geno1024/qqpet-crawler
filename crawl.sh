@@ -139,3 +139,21 @@ mkdir pet.qq.com; cd pet.qq.com
     cd .. # static
 
 cd .. # pet.qq.com/
+
+mkdir img.pet.qq.com; cd img.pet.qq.com
+
+    mkdir portal; cd portal
+    
+        mkdir uploadfiles; cd uploadfiles
+        
+            mkdir 2018-08-23; cd 2018-08-23
+            
+                wget "http://img.pet.qq.com/portal/uploadfiles/2018-08-23/41alb.png"
+            
+            cd .. # img.pet.qq.com/portal/uploadfiles/2018-08-23
+        
+        cd .. # img.pet.qq.com/portal/uploadfiles
+    
+    cd .. # img.pet.qq.com/portal
+
+cd .. # img.pet.qq.com/
