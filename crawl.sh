@@ -25,6 +25,7 @@ mkdir pet.qq.com; cd pet.qq.com
         wget "http://pet.qq.com/static/mapnew_conf.json"
         wget "http://pet.qq.com/static/pet_act_conf.json"
         wget "http://pet.qq.com/static/pet_task_conf.json"
+        wget "http://pet.qq.com/static/topiconlist_conf.json"
     
     cd .. # pet.qq.com/static/
     
@@ -48,6 +49,7 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
             wget "http://resource.pet.qq.com/WebSoc/bin-release/plugin_scriptSystem_20130925_194556.swf"
             wget "http://resource.pet.qq.com/WebSoc/bin-release/plugin_tourguide_20151230_144000.swf"
             wget "http://resource.pet.qq.com/WebSoc/bin-release/plugin_ui_1706281608.swf"
+            wget "http://resource.pet.qq.com/WebSoc/bin-release/plugin_websoc_20130527_173111.swf"
             wget "http://resource.pet.qq.com/WebSoc/bin-release/plugin_zone_20130121_170000.swf"
             
             mkdir assets; cd assets
@@ -92,7 +94,6 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                     wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/pet/upgrade.png"
                     wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/pet/uplevel.png"
                 
-                
                 cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/pet/
                 
                 mkdir res; cd res
@@ -130,26 +131,30 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                     
                     mkdir scene; cd scene
 
-                        for map in 22 6 28 24 25 21
+                        for map in `seq 7 20`
                         do
-                            mkdir $map; cd $map
+                        
+                            if [[ $(wget -O /dev/null "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/" 2>&1 | grep 403 > /dev/null; echo $?) -eq 0 ]]
+                            then
+                                mkdir $map; cd $map
 
-                                for i in `seq 0 221`
-                                do
-                                    if [[ $(wget -O /dev/null "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/bg_V"$i"/0_0.jpg"; echo $?) -eq 0 ]]
-                                    then
-                                        mkdir "bg_V"$i; cd "bg_V"$i
-                                        for x in `seq 0 11`; do for y in `seq 0 12`; do echo $x"_"$y".jpg"; done; done > mapbase.txt
-                                        wget -B "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/bg_V"$i"/" -i mapbase.txt
-                                        wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/minimap_V"$i".png"
-                                        wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/largemp_V"$i".png"
-                                        rm mapbase.txt
-                                        cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/$map/bg_V$i/
-                                    fi
-                                done
+                                    for i in `seq 0 221`
+                                    do
+                                        if [[ $(wget -O /dev/null "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/bg_V"$i"/0_0.jpg"; echo $?) -eq 0 ]]
+                                        then
+                                            mkdir "bg_V"$i; cd "bg_V"$i
+                                            for x in `seq 0 11`; do for y in `seq 0 12`; do echo $x"_"$y".jpg"; done; done > mapbase.txt
+                                            wget -B "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/bg_V"$i"/" -i mapbase.txt
+                                            wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/minimap_V"$i".png"
+                                            wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/largemp_V"$i".png"
+                                            rm mapbase.txt
+                                            cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/$map/bg_V$i/
+                                        fi
+                                    done
 
-                            cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/$map/
-                         done
+                                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/$map/
+                            fi
+                        done
                          
                         cd 22
                             
@@ -178,6 +183,17 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                     cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/topicon/
                     
                 cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/
+                
+                mkdir SceneConfig; cd SceneConfig
+                
+                    mkdir 22_1808201648; cd 22_1808201648
+    
+                        wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/SceneConfig/22_1808201648/navi.xml"
+                        wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/SceneConfig/22_1808201648/NpcList.xml"
+                                                
+                    cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/SceneConfig/22_1808201648/
+                
+                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/SceneConfig/
                 
                 mkdir task; cd task
                 
@@ -228,6 +244,7 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                     wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/ui/menuchild_topicon_20160427_113300.swf"
                     wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/ui/menuchild_xogame_20131016_153300.swf"
                     wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/ui/plugin_uiwrapper_20150827_114225.swf"
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/ui/uiplugin_daygift_151020.swf"
                     
                 cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/ui/
                 
