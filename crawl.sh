@@ -109,6 +109,8 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                     wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/ui/menuchild_bottommenu_20151208_120600.swf"
                     wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/ui/menuchild_tasksystem_20130603_144300.swf"
                     wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/ui/menuchild_broadcast_20160308_165031.swf"
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/ui/menuchild_bigmap_20131118_124138.swf"
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/ui/menuchild_petinfo_1708091610.swf"
                 
                 cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/ui/
                 
@@ -131,7 +133,8 @@ mkdir pet.qq.com; cd pet.qq.com
 
     mkdir static; cd static
 
-        wget "http://pet.qq.com/static/mapnew_conf.json"    
+        wget "http://pet.qq.com/static/mapnew_conf.json"
+        wget "http://pet.qq.com/static/pet_task_conf.json"
     
     cd .. # static
 
