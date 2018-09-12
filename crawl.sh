@@ -459,15 +459,47 @@ mkdir web.pet.qq.com; cd web.pet.qq.com
 
 cd .. # web.pet.qq.com/
 
-# for line in `grep -hPo "(?<=pic:\')\d+(?=\')" web.pet.qq.com/fcgi-bin/* | sort | uniq`; do echo $line".gif"; done > market.txt
-# mkdir img2.pet.qq.com; cd img2.pet.qq.com
-
-  #  mkdir wp; cd wp
-    
-   #     wget -B "http://img.pet.qq.com/wp/" -i ../../market.txt
-    
-    #cd .. # img.pet.qq.com/dj/
-    
-#cd .. # img.pet.qq.com/
-
+for file in `ls web.pet.qq.com/fcgi-bin/`; do iconv -f gb18030 -t utf8 web.pet.qq.com/fcgi-bin/$file | hjson -j -c | jq -r '.data.items[] | 
+if .struct == "FeedConf"
+then 
+    if .kind == "13"
+    then
+        "wp/" + .pic + "_s.gif"
+    else
+        "wp/" + .pic + ".gif"
+    end
+else
+    if .struct == "AvatarConf"
+    then
+        "avatar/" + .pos + "/" + .rid + ".png"
+    else
+        if .struct == "PropertyConf"
+        then
+            if .kind == "31"
+            then
+                "avatar_back/" + .rid + "_s.png"
+            else
+                if .kind == "15"
+                then
+                    if .subkind == "15"
+                    then
+                        "dj/" + .pic + "_s.gif"
+                    else
+                        "dj/" + .pic + ".gif"
+                    end
+                else
+                    "dj/" + .pic + "_s.gif"
+                end 
+            end
+        else
+            if .struct == "PackConf"
+            then 
+                "pack/" + .rid + ".gif"
+            else
+                empty
+            end
+        end
+    end
+end'; done | sort | uniq > market.txt
+wget -xB "http://img.pet.qq.com/" -i ../market.txt
 
