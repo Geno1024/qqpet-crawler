@@ -4,6 +4,12 @@ mkdir pet.qq.com; cd pet.qq.com
 
     mkdir resource; cd resource
     
+        mkdir flash; cd flash
+            
+            wget "http://pet.qq.com/resource/flash/resize_timer.swf"
+        
+        cd .. # pet.qq.com/resource/flash/
+    
         mkdir js; cd js
             
             wget "http://pet.qq.com/resource/js/jquery.js"
@@ -30,6 +36,8 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
 
         mkdir bin-release; cd bin-release
 
+            wget "http://resource.pet.qq.com/WebSoc/bin-release/lib_fge_all_1210301615.lib"
+            wget "http://resource.pet.qq.com/WebSoc/bin-release/lib_include_1706281608.lib"
             wget "http://resource.pet.qq.com/WebSoc/bin-release/main.swf"
             wget "http://resource.pet.qq.com/WebSoc/bin-release/plugin1808201648.xml"
             wget "http://resource.pet.qq.com/WebSoc/bin-release/plugin_avatar_20160531.swf"
@@ -150,6 +158,15 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                         cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/22
 
                     cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/
+                    
+                    mkdir title; cd title
+                    
+                        for i in `seq -w 1 18`
+                        do
+                            wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/title/200"$i".swf"
+                        done
+                    
+                    cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/title/
                     
                     mkdir topicon; cd topicon
                     
