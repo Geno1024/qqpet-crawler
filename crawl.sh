@@ -1,3 +1,29 @@
+wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts act.pet.qq.com/20120322task/index.html
+
+mkdir pet.qq.com; cd pet.qq.com
+
+    mkdir resource; cd resource
+    
+        mkdir js; cd js
+            
+            wget "http://pet.qq.com/resource/js/jquery.js"
+            wget "http://pet.qq.com/resource/js/jquery.base_v4.js"
+            wget "http://pet.qq.com/resource/js/pet_v3.js"
+        
+        cd .. # pet.qq.com/resource/js/
+        
+    cd .. # pet.qq.com/resource/
+
+    mkdir static; cd static
+
+        wget "http://pet.qq.com/static/mapnew_conf.json"
+        wget "http://pet.qq.com/static/pet_act_conf.json"
+        wget "http://pet.qq.com/static/pet_task_conf.json"
+    
+    cd .. # pet.qq.com/static/
+    
+cd .. # pet.qq.com/
+
 mkdir resource.pet.qq.com; cd resource.pet.qq.com
 
     mkdir WebSoc; cd WebSoc;
@@ -136,6 +162,12 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                     
                 cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/
                 
+                mkdir task; cd task
+                
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/task/task.xml"
+                    
+                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/task/
+                
                 mkdir title; cd title
                 
                     for i in `seq 1 5`
@@ -202,44 +234,13 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
     
 cd .. # resource.pet.qq.com/
 
-mkdir pet.qq.com; cd pet.qq.com
+mkdir web.pet.qq.com; cd web.pet.qq.com
 
-    mkdir resource; cd resource
+    mkdir petquan; cd petquan
     
-        mkdir js; cd js
-            
-            wget "http://pet.qq.com/resource/js/jquery.js"
-            wget "http://pet.qq.com/resource/js/jquery.base_v4.js"
-            wget "http://pet.qq.com/resource/js/pet_v3.js"
-        
-        cd .. # pet.qq.com/resource/js
-        
-    cd .. # pet.qq.com/resource/
-
-    mkdir static; cd static
-
-        wget "http://pet.qq.com/static/mapnew_conf.json"
-        wget "http://pet.qq.com/static/pet_act_conf.json"
-        wget "http://pet.qq.com/static/pet_task_conf.json"
+        wget "http://web.pet.qq.com/petquan/index.html"
     
-    cd .. # pet.qq.com/static/
-    
-cd .. # pet.qq.com/
+    cd .. # web.pet.qq.com/petquan
 
-mkdir img.pet.qq.com; cd img.pet.qq.com
+cd .. # web.pet.qq.com/
 
-    mkdir portal; cd portal
-    
-        mkdir uploadfiles; cd uploadfiles
-        
-            mkdir 2018-08-23; cd 2018-08-23
-            
-                wget "http://img.pet.qq.com/portal/uploadfiles/2018-08-23/41alb.png"
-            
-            cd .. # img.pet.qq.com/portal/uploadfiles/2018-08-23
-        
-        cd .. # img.pet.qq.com/portal/uploadfiles
-    
-    cd .. # img.pet.qq.com/portal
-
-cd .. # img.pet.qq.com/
