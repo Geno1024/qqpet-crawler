@@ -13,8 +13,6 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                 mkdir res; cd res
 
                     mkdir scene; cd scene
-                    
-                        for i in `seq 0 11`; do for j in `seq 0 12`; do echo $i"_"$j".jpg"; done; done > mapbase.txt
 
                         for map in 22 6 28 24 25 21
                         do
@@ -25,7 +23,8 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                                     if [[ $(wget -O /dev/null "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/bg_V"$i"/0_0.jpg"; echo $?) -eq 0 ]]
                                     then
                                         mkdir "bg_V"$i; cd "bg_V"$i
-                                        wget -B "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/bg_V"$i"/" -i ../../mapbase.txt
+                                        for x in `seq 0 11`; do for y in `seq 0 12`; do echo $x"_"$y".jpg"; done; done > mapbase.txt
+                                        wget -B "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/bg_V"$i"/" -i mapbase.txt
                                         wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/minimap_V"$i".png"
                                         wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/"$map"/largemp_V"$i".png"
                                         cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/res/scene/$map/bg_V$i/
