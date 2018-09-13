@@ -98,14 +98,24 @@ mkdir img.pet.qq.com; cd img.pet.qq.com
                 wget -B "http://img.pet.qq.com/avatar/"$major"/" -i minor.txt
                 rm minor.txt
                 
-            cd .. # img.pet.qq.com/avatar/$major
+            cd .. # img.pet.qq.com/avatar/$major/
         done
     
     cd .. # img.pet.qq.com/avatar/
     
+    mkdir avatar_back; cd avatar_back
+    
+        for i in `seq 0 7`
+        do 
+            wget "http://img.pet.qq.com/avatar_back/801"$i".png"
+        done
+    
+    cd .. # img.pet.qq.com/avatar_back/
+    
     mkdir dj; cd dj
     
         wget "http://img.pet.qq.com/dj/10001016.png"
+        wget "http://img.pet.qq.com/dj/10001016_s.gif"
     
     cd .. # img.pet.qq.com/dj/
     
