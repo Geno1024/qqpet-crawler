@@ -140,6 +140,15 @@ mkdir img.pet.qq.com; cd img.pet.qq.com
     
     cd .. # img.pet.qq.com/images/
     
+    mkdir pack; cd pack
+    
+        for i in {00..99}
+        do
+            wget "http://img.pet.qq.com/pack/$i.gif"
+        done
+    
+    cd .. # img.pet.qq.com/pack/
+    
     mkdir vip; cd vip
     
         wget "http://img.pet.qq.com/vip/vip0.png"
@@ -161,30 +170,6 @@ mkdir img.pet.qq.com; cd img.pet.qq.com
                 fi
                 j=$((j+1))
             done
-        done
-        
-        j=31
-        while true
-        do
-            printf -v k "%04d" $j
-            wget "http://img.pet.qq.com/wp/10001$k.gif"
-            if [[ $? -ne 0 ]]
-            then
-                break
-            fi
-            j=$((j+1))
-        done
-        
-        j=32
-        while true
-        do
-            printf -v k "%04d" $j
-            wget "http://img.pet.qq.com/wp/10002$k.gif"
-            if [[ $? -ne 0 ]]
-            then
-                break
-            fi
-            j=$((j+1))
         done
     
         for i in 10001 10002 10019 10201 10202 10301 10302
