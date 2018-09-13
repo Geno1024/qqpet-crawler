@@ -129,8 +129,11 @@ mkdir img.pet.qq.com; cd img.pet.qq.com
     
     mkdir dj; cd dj
     
-        wget "http://img.pet.qq.com/dj/10001016.png"
-        wget "http://img.pet.qq.com/dj/10001016_s.gif"
+        for i in `seq 1001 1099`
+        do
+            wget "http://img.pet.qq.com/dj/1000$i.png"
+            wget "http://img.pet.qq.com/dj/1000"$i"_s.gif"
+        done
     
     cd .. # img.pet.qq.com/dj/
     
@@ -158,17 +161,11 @@ mkdir img.pet.qq.com; cd img.pet.qq.com
     
     mkdir wp; cd wp
     
-        for i in 1002 1003
+        for i in 10011 10021 10031 10013 10211
         do 
-            j=1001
-            while true
+            for j in {001..500}
             do
                 wget "http://img.pet.qq.com/wp/$i$j.gif"
-                if [[ $? -ne 0 ]]
-                then
-                    break
-                fi
-                j=$((j+1))
             done
         done
     
