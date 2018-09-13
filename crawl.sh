@@ -84,7 +84,7 @@ mkdir img.pet.qq.com; cd img.pet.qq.com
         
             wget "http://img.pet.qq.com/2012/market/avatarpreview_20120229.swf"
             
-        cd .. # http://img.pet.qq.com/2012/market/
+        cd .. # img.pet.qq.com/2012/market/
     
     cd .. # img.pet.qq.com/2012/
 
@@ -161,7 +161,7 @@ mkdir img.pet.qq.com; cd img.pet.qq.com
     
     mkdir wp; cd wp
     
-        for i in 10011 10021 10031 10013 10211
+        for i in 10011 10021 10031 10012 10013 10211
         do 
             for j in {001..500}
             do
