@@ -150,7 +150,46 @@ cd .. # img.pet.qq.com/
 
 mkdir resource.pet.qq.com; cd resource.pet.qq.com
 
-    mkdir WebSoc; cd WebSoc;
+    mkdir webhome; cd webhome
+    
+        mkdir bin-release; cd bin-release
+        
+            mkdir data; cd data
+            
+                mkdir pet; cd pet
+                
+                    for i in `seq 0 8`
+                    do
+                        mkdir 0$i; cd 0$i
+                        
+                            for j in `seq 0 9`
+                            do
+                                mkdir $j; cd $j
+                                
+                                    for k in 02 03 12 13 22 23
+                                    do
+                                    
+                                        wget "http://resource.pet.qq.com/webhome/bin-release/data/pet/0$i/$j/1$k.swf"
+                                    
+                                    done
+                                
+                                cd ..
+                            done
+                            
+                        cd ..
+                    done
+                
+                cd .. # resource.pet.qq.com/webhome/bin-release/pet/
+            
+            cd .. # resource.pet.qq.com/webhome/bin-release/
+        
+        cd .. # resource.pet.qq.com/webhome/bin-release/
+    
+        
+    
+    cd .. # resource.pet.qq.com/webhome/
+
+    mkdir WebSoc; cd WebSoc
 
         mkdir bin-release; cd bin-release
         
