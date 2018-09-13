@@ -5,7 +5,8 @@ wget --recursive --level=inf --page-requisites --convert-links --adjust-extensio
 wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts web.pet.qq.com/web/market/frame.htm
 wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts http://web.pet.qq.com/petquan/index.html
 for i in yb qd qb qb_2 qd_2; do wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts --exclude-domains=pay.qq.com http://act.pet.qq.com/web/market/fail_$i.htm; done
-
+wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts http://act.pet.qq.com/magic_kit/magic_help.htm
+for i in `seq 0 5`; do wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts "http://act.pet.qq.com/cgi-bin/magic_feed?cmd=$i&type=1&pageno=1"; done
 mkdir pet.qq.com; cd pet.qq.com
 
     mkdir resource; cd resource
