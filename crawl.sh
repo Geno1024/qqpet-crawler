@@ -3,7 +3,8 @@
 wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts act.pet.qq.com/20120322task/index.html
 wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts act.pet.qq.com/newsub/babyinfo.html
 wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts web.pet.qq.com/web/market/frame.htm
-wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts http://web.pet.qq.com/petquan/index.html
+wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts web.pet.qq.com/petquan/index.html
+wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts http://resource.pet.qq.com/WebSoc/bin-release/index.html
 for i in yb qd qb qb_2 qd_2; do wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts --exclude-domains=pay.qq.com http://act.pet.qq.com/web/market/fail_$i.htm; done
 wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID"  --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts http://act.pet.qq.com/magic_kit/magic_help.htm
 for i in `seq 0 5`; do wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID"  --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts "http://act.pet.qq.com/cgi-bin/magic_feed?cmd=$i&type=1&pageno=1"; done
@@ -145,6 +146,69 @@ mkdir img.pet.qq.com; cd img.pet.qq.com
         wget "http://img.pet.qq.com/vip/vip_nn.png"
     
     cd .. # img.pet.qq.com/vip/
+    
+    mkdir wp; cd wp
+    
+        for i in 1002 1003
+        do 
+            j=1001
+            while true
+            do
+                wget "http://img.pet.qq.com/wp/$i$j.gif"
+                if [[ $? -ne 0 ]]
+                then
+                    break
+                fi
+                j=$((j+1))
+            done
+        done
+        
+        j=31
+        while true
+        do
+            printf -v k "%04d" $j
+            wget "http://img.pet.qq.com/wp/10001$k.gif"
+            if [[ $? -ne 0 ]]
+            then
+                break
+            fi
+            j=$((j+1))
+        done
+        
+        j=32
+        while true
+        do
+            printf -v k "%04d" $j
+            wget "http://img.pet.qq.com/wp/10002$k.gif"
+            if [[ $? -ne 0 ]]
+            then
+                break
+            fi
+            j=$((j+1))
+        done
+    
+        for i in 10001 10002 10019 10201 10202 10301 10302
+        do 
+            for j in {0031..0500}
+            do
+                wget "http://img.pet.qq.com/wp/$i$j.gif"
+            done
+#            j=31
+ #           while true
+  #          do
+   #             printf -v k "%04d" $j
+    #            wget "http://img.pet.qq.com/wp/$i$k.gif"
+     #           if [[ $? -ne 0 ]]
+      #          then
+       #             break
+        #        fi
+         #       j=$((j+1))
+          #  done
+        done
+    
+        wget http://img.pet.qq.com/wp/102010078.gif
+    
+    cd .. # img.pet.qq.com/wp/
 
 cd .. # img.pet.qq.com/
 
@@ -153,6 +217,8 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
     mkdir webhome; cd webhome
     
         mkdir bin-release; cd bin-release
+        
+            wget "http://resource.pet.qq.com/webhome/bin-release/webhome_shop_20130821_150000.swf"
         
             mkdir data; cd data
             
@@ -173,19 +239,17 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                                     
                                     done
                                 
-                                cd ..
+                                cd .. # resource.pet.qq.com/webhome/bin-release/data/pet/0$i/$j
                             done
                             
-                        cd ..
+                        cd .. # resource.pet.qq.com/webhome/bin-release/data/pet/0$i
                     done
                 
-                cd .. # resource.pet.qq.com/webhome/bin-release/pet/
+                cd .. # resource.pet.qq.com/webhome/bin-release/data/pet/
             
-            cd .. # resource.pet.qq.com/webhome/bin-release/
+            cd .. # resource.pet.qq.com/webhome/bin-release/data/
         
         cd .. # resource.pet.qq.com/webhome/bin-release/
-    
-        
     
     cd .. # resource.pet.qq.com/webhome/
 
@@ -459,11 +523,23 @@ mkdir resource.pet.qq.com; cd resource.pet.qq.com
                     
                 cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/ui/
                 
+                mkdir Wilderness; cd Wilderness
+                        
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/Wilderness/WildernessScript.swf"
+                    
+                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/Wilderness/
+                
                 mkdir WorldMap; cd WorldMap
                         
                     wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/WorldMap/WorldMap20130529.swf"
                     
                 cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/WorldMap/
+                
+                mkdir XOGame; cd XOGame
+                
+                    wget "http://resource.pet.qq.com/WebSoc/bin-release/Data/XOGame/XOGame120308.swf"
+                    
+                cd .. # resource.pet.qq.com/WebSoc/bin-release/Data/XOGame/
                 
                 mkdir zonelist; cd zonelist
                         
@@ -506,6 +582,8 @@ mkdir web.pet.qq.com; cd web.pet.qq.com
         
         wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" "http://web.pet.qq.com/fcgi-bin/market?cmd=shop&ajax=1&kind=4&spec=102"
         wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" "http://web.pet.qq.com/fcgi-bin/market?cmd=shop&ajax=1&kind=4&spec=103"
+        
+        wget "http://web.pet.qq.com/fcgi-bin/petshow?petid=$PET_ID&level=30"
                 
     cd .. # web.pet.qq.com/fcgi-bin/
 
@@ -520,6 +598,10 @@ cd .. # web.pet.qq.com/
 mkdir x.pet.qq.com; cd x.pet.qq.com
 
     wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID"  "http://x.pet.qq.com/shequdingbuicon?cmd=GetUser"
+    for i in `seq 0 10`
+    do
+        wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID"  "http://x.pet.qq.com/babyinfo?cmd=$i"
+    done
 
 cd .. # x.pet.qq.com/
 
