@@ -10,6 +10,7 @@ wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID"  
 for i in `seq 0 5`; do wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID"  --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts "http://act.pet.qq.com/cgi-bin/magic_feed?cmd=$i&type=1&pageno=1"; done
 wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts --domains=pet.qq.com http://pig.pet.qq.com/index.shtml
 wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts --domains=pet.qq.com,act.pet.qq.com,resource.pet.qq.com,web.pet.qq.com,img.pet.qq.com http://pet.qq.com
+wget --recursive --level=inf -S --page-requisites --span-hosts --domains=pet.qq.com,act.pet.qq.com,resource.pet.qq.com,web.pet.qq.com,img.pet.qq.com,gw.pet.qq.com http://gw.pet.qq.com/web07/help.shtml
 
 mkdir pet.qq.com; cd pet.qq.com
 
