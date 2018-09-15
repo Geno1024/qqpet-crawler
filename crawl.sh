@@ -10,7 +10,16 @@ wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID"  
 for i in `seq 0 5`; do wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID"  --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts "http://act.pet.qq.com/cgi-bin/magic_feed?cmd=$i&type=1&pageno=1"; done
 wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts --domains=pet.qq.com http://pig.pet.qq.com/index.shtml
 wget --recursive --level=inf --page-requisites --convert-links --adjust-extension --span-hosts --domains=pet.qq.com,act.pet.qq.com,resource.pet.qq.com,web.pet.qq.com,img.pet.qq.com http://pet.qq.com
-wget --recursive --level=inf -S --page-requisites --span-hosts --domains=pet.qq.com,act.pet.qq.com,resource.pet.qq.com,web.pet.qq.com,img.pet.qq.com,gw.pet.qq.com http://gw.pet.qq.com/web07/help.shtml
+wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" --recursive --level=inf -S --page-requisites --span-hosts --domains=pet.qq.com,act.pet.qq.com,resource.pet.qq.com,web.pet.qq.com,img.pet.qq.com,gw.pet.qq.com http://gw.pet.qq.com/web07/help.shtml
+for i in {0..2}
+do
+    for j in {0..2}
+    do
+        wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" --recursive --level=inf -S --page-requisites --span-hosts --domains=pet.qq.com "http://web.pet.qq.com/fcgi-bin/petstudy?cmd=1&grade=$i&type=$j"
+    done
+done
+
+wget --recursive --level=inf -S --page-requisites --span-hosts http://pet.qq.com/app/desktop_vippet.html?src=1
 
 mkdir pet.qq.com; cd pet.qq.com
 
@@ -139,6 +148,29 @@ mkdir img.pet.qq.com; cd img.pet.qq.com
     
     cd .. # img.pet.qq.com/avatar_back/
     
+    mkdir client; cd client
+        
+        mkdir study; cd study
+        
+            mkdir images; cd images
+            
+                for i in {01..03}
+                do
+                    for j in {01..03}
+                    do
+                        for k in xx zx dx
+                        do
+                            wget "http://img.pet.qq.com/client/study/images/$i$j$k.jpg"
+                        done
+                    done
+                done
+            
+            cd .. # img.pet.qq.com/client/study/images
+        
+        cd .. # img.pet.qq.com/client/study/
+    
+    cd .. # img.pet.qq.com/client/
+    
     mkdir dj; cd dj
     
         for i in `seq 1001 1099`
@@ -163,6 +195,24 @@ mkdir img.pet.qq.com; cd img.pet.qq.com
         done
     
     cd .. # img.pet.qq.com/pack/
+    
+    mkdir swf; cd swf
+    
+        mkdir games; cd games
+        
+            mkdir webgame; cd webgame
+            
+                for i in {00..99}
+                do
+                    wget "http://img.pet.qq.com/swf/games/webgame/main_tlx_$i.swf"
+                    wget "http://img.pet.qq.com/swf/games/webgame/tlx_$i.swf"
+                done
+            
+            cd .. # img.pet.qq.com/swf/games/webgame/
+        
+        cd .. # img.pet.qq.com/swf/games/
+    
+    cd .. # img.pet.qq.com/swf/
     
     mkdir vip; cd vip
     
