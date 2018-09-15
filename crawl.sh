@@ -18,8 +18,21 @@ do
         wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" --recursive --level=inf -S --page-requisites --span-hosts --domains=pet.qq.com "http://web.pet.qq.com/fcgi-bin/petstudy?cmd=1&grade=$i&type=$j"
     done
 done
+for i in `seq -w 1 50`; do wget img.pet.qq.com/client/study/kaoshi_bt$i.gif; done
+for i in `seq -w 1 50`; do wget img.pet.qq.com/client/study/1021700"$i"_teacher.gif; done
+for i in `seq -w 1 50`; do wget img.pet.qq.com/client/study/z_$i.gif; done
+for i in `seq -w 1 50`; do wget img.pet.qq.com/client/study/x_$i.gif; done
+for i in `seq -w 00 17`; do wget -x http://img.pet.qq.com/swf/games/webgame/main_mxz_$i.swf; done
 
 wget --recursive --level=inf -S --page-requisites --span-hosts http://pet.qq.com/app/desktop_vippet.html?src=1
+
+wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" --recursive --level=inf -S --page-requisites --span-hosts --domains=pet.qq.com "http://web.pet.qq.com/treasure_map/click_tutu.html"
+for i in `seq -w 99 110`; do wget -x --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" --recursive --level=inf -S --page-requisites --span-hosts --domains=pet.qq.com "http://x.pet.qq.com/work?cmd=show_yard&yard=$i"; done
+wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" --recursive --level=inf -S --page-requisites --span-hosts --domains=pet.qq.com "http://act.pet.qq.com/work/work.html"
+wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" --recursive --level=inf -S --page-requisites --span-hosts --domains=pet.qq.com "http://act.pet.qq.com/npc/npc_five.html"
+for i in `seq 0 10`; do wget -x "http://img.pet.qq.com/2013/work_study/swf/$i.swf"; done
+for i in `seq 0 10`; do wget http://img.pet.qq.com/2013/work_study/$i.gif; done
+wget --header "Cookie: uin=$uin; skey=$skey; PET_UIN=$PET_UIN; PET_ID=$PET_ID" --recursive --level=inf -S --page-requisites --span-hosts --domains=pet.qq.com "http://web.pet.qq.com/fcgi-bin/petstudy?cmd=1&grade=2&type=2"
 
 mkdir pet.qq.com; cd pet.qq.com
 
@@ -68,6 +81,12 @@ mkdir act.pet.qq.com; cd act.pet.qq.com
         done
     
     cd .. # act.pet.qq.com/main/
+    
+    mkdir oneonegame; cd oneonegame
+    
+        wget --recursive --level=inf --page-requisites --span-hosts "http://act.pet.qq.com/oneonegame/suanshu.html"
+    
+    cd .. # act.pet.qq.com/oneonegame/
 
 cd .. # act.pet.qq.com/
 
@@ -898,3 +917,126 @@ echo "
 " > scene.txt
 
 wget -xB "http://resource.pet.qq.com/WebSoc/bin-release/Data/res/scene" -i scene.txt
+
+echo "2012-11-28/0o15c.png
+2012-11-28/1lo9c.png
+2012-11-28/1n19c.png
+2012-11-28/1qo8c.png
+2012-11-28/28k0c.png
+2012-11-28/2rvuc.png
+2012-11-28/2u88c.png
+2012-11-28/3399c.png
+2012-11-28/3j5vc.png
+2012-11-28/3ou8c.png
+2012-11-28/3yf8c.png
+2012-11-28/4qg9c.png
+2012-11-28/7n1cd.png
+2012-11-28/98nvc.png
+2012-11-28/9ae9c.png
+2012-11-28/9n55c.png
+2012-11-28/9q49c.png
+2012-11-28/a7q9c.png
+2012-11-28/akx8c.png
+2012-11-28/b9q0c.png
+2012-11-28/c5a6c.png
+2012-11-28/cf67c.png
+2012-11-28/d9n5c.png
+2012-11-28/gzhzc.png
+2012-11-28/h43uc.png
+2012-11-28/hb4cd.png
+2012-11-28/hf9vc.png
+2012-11-28/hjr8c.png
+2012-11-28/hkzcd.png
+2012-11-28/hyz8c.png
+2012-11-28/jdfwc.png
+2012-11-28/jmj9c.png
+2012-11-28/ju48c.png
+2012-11-28/ktt7c.png
+2012-11-28/l0y5c.png
+2012-11-28/las5c.png
+2012-11-28/m5gad.png
+2012-11-28/mkt9c.png
+2012-11-28/n8l8c.png
+2012-11-28/nwc8c.png
+2012-11-28/q4h0c.png
+2012-11-28/rread.png
+2012-11-28/rsacd.png
+2012-11-28/s2v9c.png
+2012-11-28/sej8c.png
+2012-11-28/vhk6c.png
+2012-11-28/vj60c.png
+2012-11-28/vr6uc.png
+2012-11-28/vr87c.png
+2012-11-28/whl5c.png
+2012-11-28/wyiad.png
+2012-11-28/xdb9c.png
+2012-11-28/xyl9c.png
+2012-11-28/z50vc.png
+2012-11-28/zr79c.png
+2012-11-28/zzfcd.png
+2012-11-29/36ewc.png
+2012-11-29/c2ruc.png
+2012-11-29/c4cwc.png
+2012-11-29/c5tuc.png
+2012-11-29/iqmuc.png
+2012-11-29/n5hwc.png
+2012-11-29/tz4vc.png
+2012-11-29/vh5wc.png
+2012-12-17/jrjyc.png
+2013-01-14/1qggc.png
+2013-01-14/5v0gc.png
+2013-01-14/aguhc.png
+2013-01-14/b3bgc.png
+2013-01-14/j1mec.png
+2013-01-14/jhphc.png
+2013-01-14/sz3gc.png
+2013-01-14/w56fc.png
+2013-01-14/y47gc.png
+2013-04-24/4vruc.png
+2013-04-24/f4ewc.png
+2013-05-22/ohspc.png
+2013-06-19/0xcuc.png
+2013-07-17/6suzc.png
+2013-07-17/737vc.png
+2013-07-17/awmvc.png
+2015-08-31/q5xkc.png
+2015-10-27/gjofc.png
+2015-12-31/j1wgb.png
+2016-01-05/5g1kc.png
+2016-01-05/cl0kc.png
+2016-01-05/g0wkc.png
+2016-01-05/ltykc.png
+2016-01-05/mozkc.png
+2016-01-05/nzxkc.png
+2016-01-07/7kqrb.png
+2016-04-07/skilb.png
+2016-04-11/57jqb.png
+2016-04-12/52vob.png
+2016-04-12/5ztlb.png
+2016-04-12/bq4lb.png
+2016-04-12/ee1nc.png
+2016-04-12/g4hmb.png
+2016-04-12/gveob.png
+2016-04-12/h1qnc.png
+2016-04-12/iqamb.png
+2016-04-12/k9alb.png
+2016-04-12/knnjb.png
+2016-04-12/lemmb.png
+2016-04-12/m5ymc.png
+2016-04-12/ss8sb.png
+2016-04-12/tvklc.png
+2016-04-12/uaukc.png
+2016-04-12/xd5kb.png
+2016-04-12/ywylb.png
+2016-04-13/qfurc.png
+2016-04-14/zupgb.png
+2016-05-12/v1opb.png
+2016-05-25/vuvmc.png
+2016-07-20/k3ekc.png
+2016-08-25/a31ib.png
+2016-09-22/kj90b.png
+2017-11-08/e24cb.png
+2018-08-23/41alb.png
+" > achieve.txt
+
+wget -xB "http://img.pet.qq.com/portal/uploadfiles/" -i achieve.txt
